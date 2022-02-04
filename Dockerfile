@@ -1,5 +1,9 @@
 FROM i386/ubuntu:12.04
 
+
+WORKDIR /etc/apt
+COPY src/sources.list . 
+
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y autoconf libtool libssl-dev libxml2-dev openssl
 RUN apt-get install -y build-essential python python3 vim clang
